@@ -1,0 +1,380 @@
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
+wait(0.1)
+local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
+wait(1)
+NotificationLibrary:SendNotification("Info", "Script Made By Projeto LKA", 3)
+wait(0.1)
+NotificationLibrary:SendNotification("Info", "Pistol 1V1", 3)
+wait(0.1)
+NotificationLibrary:SendNotification("Info", "Script Remake", 3)
+
+---------------------------------------------------------------------------------------------------------------
+
+--[[
+
+IIIIIIIIIIIIIIII
+I   I I I     II
+I   I   I     II
+I   I   I     II
+I   I I I     II
+I     IIIIIIIIII
+I     II
+I     II
+I     II
+I     II
+I     II
+I     II
+I     II
+IIIIIIII
+
+
+IIIIIIIIIIIIIII
+I   I I I     I
+I   I   I     I
+I   I I I     I
+I     IIIIIIIII
+I     I     II
+I     II     II
+I     III     II
+I     I II     II
+I     I  II     II
+I     I   II     II
+IIIIIII    IIIIIIII
+
+
+IIIIIIIIIIIIIIIIII
+I                I
+I   IIIIIIIII    I
+I   I       I    I
+I   I       I    I
+I   I       I    I
+I   I       I    I
+I   IIIIIIIII    I
+I                I
+IIIIIIIIIIIIIIIIII
+
+
+              IIIIIIIIIIIIIIII
+                   III
+                   III
+                   III
+                   III
+                   III
+                  III
+                 III
+II              III
+ III            III
+  IIIIIIIIIIIIIIII
+
+IIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIII
+II               
+IIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIII
+II               
+IIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIII
+
+
+IIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIII
+          III
+          III            
+          III
+          III
+          III
+          III
+          III
+          III
+          III
+          III
+          III
+           
+          
+IIIIIIIIIIIIIIIIII
+I                I
+I   IIIIIIIII    I
+I   I       I    I
+I   I       I    I
+I   I       I    I
+I   I       I    I
+I   IIIIIIIII    I
+I                I
+IIIIIIIIIIIIIIIIII
+
+
+III
+III
+III
+III
+III
+III
+III
+III
+III
+III
+IIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIII
+
+
+II      II
+II     II
+II    II
+II   II
+II  II
+II II
+IIII
+II II
+II  II
+II   II
+II    II
+II     II
+II      II
+
+
+IIIIIIIIIIIIIIIIII
+I                I
+I                I
+I    IIIIIIII    I
+I    II    II    I
+I    II    II    I
+I    IIIIIIII    I
+I                I
+I    IIIIIII     I
+I    I     I     I
+I    I     I     I
+I    I     I     I
+IIIIII     IIIIIII
+
+]]
+
+MakeWindow({
+  Hub = {
+    Title = "Projeto LKA",
+    Animation = "by : dqtixz"
+  },
+  Key = {
+    KeySystem = false,
+    Title = "Key System",
+    Description = "",
+    KeyLink = "",
+    Keys = {"1234"},
+    Notifi = {
+      Notifications = true,
+      CorrectKey = "Running the Script...",
+      Incorrectkey = "The key is incorrect",
+      CopyKeyLink = "Copied to Clipboard"
+    }
+  }
+})
+
+local Main = MakeTab({Name = "Main"})
+
+local section = AddSection(Main, {"Fuction Script"})
+
+AddButton(Main, {
+  Name = "Aimbot",
+  Callback = function()
+_G.config = {
+Fov = 30,
+MaxTransparency = 0.1,
+Smoothness = 1,
+TargetPart = "Head",
+TeamCheck = false,
+WallCheck = false,
+MaxDistanceEnabled = false,
+MaxDistance = 10000,
+FovColor = Color3.fromRGB(65, 105, 225)
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/D0LLYNHO/AIMBOT-FOV/main/MOBILE-BETA-0.2", true))()
+  end
+})
+
+
+AddTextBox(Main, {
+  Name = "Hitbox",
+  Default = "",
+  PlaceholderText = "Value",
+  ClearText = true,
+  Callback = function(Value)
+    
+                   _G.HeadSize = value
+                  _G.Disabled = true
+ 
+                 game:GetService('RunService').RenderStepped:connect(function()
+                if _G.Disabled then
+               for i,v in next, game:GetService('Players'):GetPlayers() do
+              if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+             pcall(function()
+            v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+           v.Character.HumanoidRootPart.Transparency = 0.7
+          v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+         v.Character.HumanoidRootPart.Material = "Neon"
+        v.Character.HumanoidRootPart.CanCollide = false
+       end)
+      end
+     end
+    end
+   end)
+  end
+})
+
+
+AddTextBox(Main, {
+  Name = "Speed",
+  Default = "",
+  PlaceholderText = "Value",
+  ClearText = true,
+  Callback = function(Value)
+       getgenv().Walkspeed = Value
+      pcall(function()
+     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end)
+  end
+})
+
+AddTextBox(Main, {
+  Name = "Jumppower",
+  Default = "",
+  PlaceholderText = "Value",
+  ClearText = true,
+  Callback = function(Value)
+     getgenv().Jumppower = Value
+    pcall(function()
+   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = Value
+  end)
+ end
+})
+
+AddTextBox(Main, {
+  Name = "Fov",
+  Default = "",
+  PlaceholderText = "Value",
+  ClearText = true,
+  Callback = function(Value)
+    local FovNumber = Value
+   local Camera = workspace.CurrentCamera
+  Camera.FieldOfView = FovNumber  
+ end
+})
+
+AddButton(Main, {
+  Name = "Esp Hitbox",
+  Callback = function()
+    local FillColor = Color3.fromRGB(65,255,0)
+local DepthMode = "AlwaysOnTop"
+local FillTransparency = 0.5
+local OutlineColor = Color3.fromRGB(255,255,255)
+local OutlineTransparency = 0
+
+local CoreGui = game:FindService("CoreGui")
+local Players = game:FindService("Players")
+local lp = Players.LocalPlayer
+local connections = {}
+
+local Storage = Instance.new("Folder")
+Storage.Parent = CoreGui
+Storage.Name = "Highlight_Storage"
+
+local function Highlight(plr)
+    local Highlight = Instance.new("Highlight")
+    Highlight.Name = plr.Name
+    Highlight.FillColor = FillColor
+    Highlight.DepthMode = DepthMode
+    Highlight.FillTransparency = FillTransparency
+    Highlight.OutlineColor = OutlineColor
+    Highlight.OutlineTransparency = 0
+    Highlight.Parent = Storage
+
+    local plrchar = plr.Character
+    if plrchar then
+        Highlight.Adornee = plrchar
+    end
+
+    connections[plr] = plr.CharacterAdded:Connect(function(char)
+        Highlight.Adornee = char
+    end)
+end
+
+Players.PlayerAdded:Connect(Highlight)
+for i,v in next, Players:GetPlayers() do
+    Highlight(v)
+end
+
+Players.PlayerRemoving:Connect(function(plr)
+    local plrname = plr.Name
+    if Storage[plrname] then
+        Storage[plrname]:Destroy()
+    end
+    if connections[plr] then
+        connections[plr]:Disconnect()
+    end
+end)
+       wait(0.1)
+    local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
+ wait(0.1)
+NotificationLibrary:SendNotification("Success", "Script Injected !", 3)
+  end
+})
+
+AddButton(Main, {
+  Name = "Inf Jump",
+  Callback = function()
+       local InfiniteJumpEnabled = true
+  
+      game:GetService("UserInputService").JumpRequest:connect(function()
+
+	   if InfiniteJumpEnabled then		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+
+	  end
+
+   end)
+  end
+})
+
+AddButton(Main, {
+  Name = "Random Server",
+  Callback = function()
+local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+module:Teleport(game.PlaceId)
+end
+})
+
+AddButton(Main, {
+  Name = "Rejoin",
+  Callback = function()
+ local ts = game:GetService("TeleportService")
+local p = game:GetService("Players").LocalPlayer
+ts:Teleport(game.PlaceId, p)
+    end
+    })
+  
+  local Main = MakeTab({Name = "Main"})
+  
+  AddButton(Main, {
+  Name = "Script made by dqtixz",
+  Callback = function()
+    
+    end
+    })
+  
+    AddButton(Main, {
+  Name = "Scriptblox.com please follow and like",
+  Callback = function()
+    
+    end
+    })
+  
+    AddButton(Main, {
+  Name = "for more scripts !",
+  Callback = function()
+    
+    end
+    })
+
+
